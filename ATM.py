@@ -42,6 +42,14 @@ while True:
         balance -= withdraw_amount
         receipts.append(('출금', withdraw_amount, balance))
         print(f'출금하신 금액은 {withdraw_amount}원이고, 현재 잔액은 {balance}원 입니다.')
-    
+    if num == '3':
+        #영수증에 값이 있을때, 값이 없을때
+        if receipts: # 프로그램이 시작되자마자 3번을 눌렀을 경우 이 조건은 거짓
+            print('===영수증===')
+            for i in receipts:
+                print(f' {i[0]}: {i[1]}원 | 잔액 : {i[2]}원')
+                
+        else:
+            print('영수증 내역이 없습니다.')
     
 print(f'서비스를 종료합니다. 현재 잔액은 {balance}원 입니다.')
